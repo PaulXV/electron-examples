@@ -1,3 +1,11 @@
+nav{
+    -webkit-app-region: drag;
+}
+
+.controls{
+    -webkit-app-region: no-drag;
+}
+
 .minimizeBtn, .maximizeBtn, .closeBtn {
     background-color: transparent;
     color: white;
@@ -12,6 +20,10 @@
     align-items: center;
     justify-content: center;
     border-radius: 5px;;
+}
+
+.closeBtn{
+    margin-right: 0px;
 }
 
 .minimizeBtn:hover, .maximizeBtn:hover, .closeBtn:hover {

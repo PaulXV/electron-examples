@@ -10,9 +10,9 @@
 </head>
 <body class="p-6 max-w-4xl mx-auto">
 
-  <div class="flex justify-between items-center bg-gray-800 text-white p-2 fixed top-0 left-0 right-0">
+  <nav class="flex justify-between items-center bg-gray-800 text-white p-2 fixed top-0 left-0 right-0">
     <div class="text-lg font-bold pl-4">Esempio 5</div>
-    <div class="flex">
+    <div class="flex controls">
       <button class="minimizeBtn" id="minimizeBtn">
         <i class="fa-solid fa-window-minimize" style="color: #ffffff;"></i>
       </button>
@@ -23,6 +23,14 @@
         <i class="fa-solid fa-x" style="color: #ffffff;"></i>
       </button>
     </div>
+  </nav>
+
+  <div class="content mt-16 p-4 bg-white rounded-md shadow-lg">
+    <h1 class="text-2xl font-bold mb-4">Esempio 5</h1>
+    <p class="mb-4">Questo è un esempio di finestra con controlli personalizzati.</p>
+    <p>Puoi minimizzare, massimizzare e chiudere la finestra utilizzando i pulsanti in alto a destra.</p>
+    <p class="mb-4">Sono stati introdotti anche i campi per dimensione minima della finestra.</p>
+    <p>Questa finestra è stata creata utilizzando Electron e Tailwind CSS.</p>
   </div>
 
   <script src="renderer.js"></script>
