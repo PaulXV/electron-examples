@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Electron e Tkinter con Pythonia</title>
+</head>
+<body>
+  <h1>Test Electron + Tkinter</h1>
+  <button id="openTkBtn">Apri finestra Tkinter</button>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    document.getElementById('openTkBtn').addEventListener('click', () => {
+      ipcRenderer.send('open-tk-window');
+    });
+  </script>
+</body>
+</html>

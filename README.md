@@ -9,7 +9,9 @@ Repo with some basic examples made with electron js.
 
 [# Example 4](https://github.com/PaulXV/electron-examples/tree/main/example-4) - run with debug;
 
-[# Example 5](https://github.com/PaulXV/electron-examples/tree/main/example-5) - custom app bar.
+[# Example 5](https://github.com/PaulXV/electron-examples/tree/main/example-5) - custom app bar;
+
+[# Example 6](https://github.com/PaulXV/electron-examples/tree/main/example-6) - tkinter.
 
 
 ### Credits
