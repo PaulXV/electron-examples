@@ -27,4 +27,4 @@
  */
 
 // Add this to the end of the existing file
-import './app.jsx';
+import './main.jsx';
