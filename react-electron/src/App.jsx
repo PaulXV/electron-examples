@@ -1,23 +1,16 @@
 import React from 'react'
-import { useState } from 'react'
-import Button from '@mui/material/Button';
+import Sidebar from './components/Sidebar.jsx';
+import UpperTabs from './components/UpperTabs.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
+return (
     <>
-      <h1>React</h1>
-      <div className="card">
-        <Button variant="outlined" onClick={() => setCount((count) => count + 1)}>
-          Count is {count}
-        </Button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
+        <Sidebar>
+            <UpperTabs/>
+        </Sidebar>
     </>
-  )
+)
 }
 
 export default App
