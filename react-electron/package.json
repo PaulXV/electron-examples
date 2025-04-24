@@ -3,7 +3,7 @@
   "productName": "react-electron",
   "version": "1.0.0",
   "description": "My Electron application description",
-  "main": ".webpack/main",
+  "main": ".webpack/main.bundle.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -32,11 +32,13 @@
     "@electron/fuses": "^1.8.0",
     "@vercel/webpack-asset-relocator-loader": "^1.7.3",
     "babel-loader": "^10.0.0",
+    "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^6.11.0",
     "electron": "35.2.1",
     "node-loader": "^2.1.0",
     "style-loader": "^3.3.4",
-    "webpack": "^5.99.6"
+    "webpack": "^5.99.6",
+    "webpack-cli": "^6.0.1"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -45,6 +47,7 @@
     "@mui/material": "^7.0.2",
     "@mui/x-data-grid": "^8.1.0",
     "electron-squirrel-startup": "^1.0.1",
+    "python-shell": "^5.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",

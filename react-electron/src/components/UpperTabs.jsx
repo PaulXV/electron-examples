@@ -1,10 +1,20 @@
 import * as React from 'react';
+
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import DataGridDemo from './DataGrid.jsx';
 import ResBoxContainer from './ResBoxContainer.jsx';
+import { Button } from '@mui/material';
+
+window.electron.ipcRenderer.invoke('get-module', 'electron').then((someModule) => {
+  if (someModule) {
+    console.log(someModule);
+  }
+}).catch((error) => {
+  console.error('Errore nel caricare il modulo:', error);
+});
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -37,11 +47,18 @@ function a11yProps(index) {
 
 export default function UpperTabs() {
   const [value, setValue] = React.useState(0);
+  const [result, setResult] = React.useState('');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  const handleClick = () => {
+    window.electron.ipcRenderer.invoke('comm-python').then((result) => {
+      setResult(result);
+    });
+  }
+  
   return (
     <Box sx={{ width: '100%' }}>
       <Box
@@ -67,7 +84,10 @@ export default function UpperTabs() {
         <DataGridDemo />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        Item Three
+        <Button variant="contained" onClick={handleClick}>
+          Use python program
+        </Button>
+        <p>{result}</p>
       </CustomTabPanel>
     </Box>
   );

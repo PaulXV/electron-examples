@@ -1,5 +1,7 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('node:path');
+
+import {PythonShell} from 'python-shell';
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -12,6 +14,8 @@ const createWindow = () => {
     width: 800,
     height: 600,
     webPreferences: {
+      contextIsolation: true,
+      nodeIntegration: false,
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
   });
@@ -49,3 +53,25 @@ app.on('window-all-closed', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
+ipcMain.handle('comm-python', 
+  (event, args) => {
+    let pyshell = new PythonShell(path.join(__dirname,             
+      './scripts/script.py')
+    );  
+    pyshell.on('main',function(results) {   
+    ipcRenderer.send(
+      'response-python', 
+      { results }
+    );            
+  });
+});
+
+ipcMain.handle('get-module', async (event, moduleName) => {
+  if (moduleName === 'electron') {
+    return {
+      ipcRenderer: require('electron').ipcRenderer,
+    };
+  }
+
+  return null;
+});
