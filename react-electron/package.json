@@ -33,7 +33,7 @@
     "@vercel/webpack-asset-relocator-loader": "^1.7.3",
     "babel-loader": "^10.0.0",
     "css-loader": "^6.11.0",
-    "electron": "35.2.0",
+    "electron": "35.2.1",
     "node-loader": "^2.1.0",
     "style-loader": "^3.3.4",
     "webpack": "^5.99.6"
@@ -41,13 +41,13 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@fontsource/roboto": "^5.2.5",
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
-    "@mui/styled-engine-sc": "^7.0.2",
+    "@mui/x-data-grid": "^8.1.0",
     "electron-squirrel-startup": "^1.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "styled-components": "^6.1.17"
+    "react-icons": "^5.5.0",
+    "react-resizable": "^3.0.5"
   }
 }

@@ -4,13 +4,13 @@ import UpperTabs from './components/UpperTabs.jsx';
 
 function App() {
 
-return (
-    <>
-        <Sidebar>
-            <UpperTabs/>
-        </Sidebar>
-    </>
-)
+    return (
+        <>
+            <Sidebar>
+                <UpperTabs/>
+            </Sidebar>
+        </>
+    )
 }
 
 export default App
